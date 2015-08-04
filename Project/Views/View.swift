@@ -10,11 +10,5 @@
 import UIKit
 
 class View : UIView {
-    
-    //MARK: - lifecycle
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
+
 }
