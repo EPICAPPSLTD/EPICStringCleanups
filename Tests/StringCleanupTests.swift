@@ -72,9 +72,12 @@ class StringCleanupTests: XCTestCase {
     func testStringContainingOnlyCharactersInSet() {
         let string1 = "this contains letters and numbers 1234567890."
         let string2 = "This Contains Only Letters."
+        let string3 = "TCOL"
 
         XCTAssertEqual(string1.stringContainingOnlyCharactersInSet(NSCharacterSet.decimalDigitCharacterSet()), "1234567890")
         XCTAssertEqual(string2.stringContainingOnlyCharactersInSet(NSCharacterSet.uppercaseLetterCharacterSet()), "TCOL")
+        XCTAssertEqual(string3.stringContainingOnlyCharactersInSet(NSCharacterSet.uppercaseLetterCharacterSet()), "TCOL")
+
     }
     
     func testTrim() {
