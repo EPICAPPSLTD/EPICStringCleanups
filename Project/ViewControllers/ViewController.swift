@@ -11,10 +11,5 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    //MARK: - view
-    var castedView : View {
-        return self.view as! View;
-    }
-
 }
 
