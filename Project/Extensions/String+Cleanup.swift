@@ -12,12 +12,12 @@ import Foundation
 extension String {
     
     //MARK: - edited strings
-    /// Trims all white space characters from the beginning and end of a string.
+    /// Trims all whitespace and newline characters from the beginning and end of a string.
     var trimmedString : String {
         return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet());
     }
     
-    /// Normalizes a string and returns its lowercase representation using the base representation of its characters. Result will trim and remove all diacritic representations from a string.
+    /// Normalizes a string and returns its lowercase representation using the base representation of its characters. Result remove all diacritic representations from a string.
     var normalizedString : String {
         return self.trimmedString.stringByFoldingWithOptions([.CaseInsensitiveSearch, .DiacriticInsensitiveSearch], locale: NSLocale.currentLocale())
     }
@@ -27,9 +27,9 @@ extension String {
         var lines = self.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet()).filter({ !$0.isEmpty })
         for var index = 0; index < lines.count; index++ {
             let words = lines[index].componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).filter({ !$0.isEmpty })
-            lines[index] = " ".join(words)
+            lines[index] = words.joinWithSeparator(" ")
         }
-        return "\n".join(lines)
+        return lines.joinWithSeparator("\n")
     }
     
     /**
@@ -42,7 +42,7 @@ extension String {
             return self
         }
         let components = self.componentsSeparatedByCharactersInSet(characterSet.invertedSet).filter({!$0.isEmpty})
-        return "".join(components)
+        return components.joinWithSeparator("")
     }
 
     //MARK: - mutating strings edits
@@ -51,7 +51,7 @@ extension String {
         self = self.trimmedString
     }
     
-    /// Normalizes a string and returns its lowercase representation using the base representation of its characters. Result will trim and remove all diacritic representations from a string. This function is mutating and can only be applied on variable strings
+    /// Normalizes a string and returns its lowercase representation using the base representation of its characters. Result remove all diacritic representations from a string. This function is mutating and can only be applied on variable strings
     mutating func normalize() {
         self = self.normalizedString
     }

@@ -65,7 +65,7 @@ class StringCleanupTests: XCTestCase {
     }
     
     func testCleanString() {
-        var string = "\n\n This   is   a     string with  lots of    double spaces.    \n\n   And a newline.\n  Or two.    \n"
+        let string = "\n\n This   is   a     string with  lots of    double spaces.    \n\n   And a newline.\n  Or two.    \n"
         XCTAssertEqual(string.cleanString, "This is a string with lots of double spaces.\nAnd a newline.\nOr two.")
     }
     
@@ -77,7 +77,6 @@ class StringCleanupTests: XCTestCase {
         XCTAssertEqual(string1.stringContainingOnlyCharactersInSet(NSCharacterSet.decimalDigitCharacterSet()), "1234567890")
         XCTAssertEqual(string2.stringContainingOnlyCharactersInSet(NSCharacterSet.uppercaseLetterCharacterSet()), "TCOL")
         XCTAssertEqual(string3.stringContainingOnlyCharactersInSet(NSCharacterSet.uppercaseLetterCharacterSet()), "TCOL")
-
     }
     
     func testTrim() {
@@ -179,7 +178,7 @@ class StringCleanupTests: XCTestCase {
     func testContainsOnlyCharactersInSet() {
         let string1 = "1234567890"
         let string2 = "This Contains Only Letters."
-        
+    
         XCTAssertTrue(string1.containsOnlyCharactersInSet(NSCharacterSet.decimalDigitCharacterSet()))
         XCTAssertFalse(string1.containsOnlyCharactersInSet(NSCharacterSet.uppercaseLetterCharacterSet()))
         
