@@ -63,7 +63,7 @@ string.containsOnlyCharactersInSet(NSCharacterSet.decimalDigitCharacterSet()) //
 ```
 
 This class serves as an extension to the tutorial of the blog article: ["Managing user input"](http://epic-apps.uk/2015/10/17/the-tragedy-of-user-input/).
-A lot of effort is put towards making these tutorials and usage is free for all based on the attached license details, if you find this code useful, please consider [letting me know](helloworld@epic-apps.uk)! :)
+A lot of effort is put towards making these tutorials and usage is free for all based on the attached license details, if you find this code useful, please consider [letting me know](http://epic-apps.uk/contact/)! :)
 
 Copyright (c) EPIC 
 [www.epic-apps.uk](www.epic-apps.uk)
